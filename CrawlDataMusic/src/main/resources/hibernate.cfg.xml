@@ -1,0 +1,43 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-configuration SYSTEM 
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+
+		<property name="hibernate.dialect">
+			org.hibernate.dialect.MySQL5Dialect
+		</property>
+
+		<property name="hibernate.connection.driver_class">
+			com.mysql.jdbc.Driver
+		</property>
+
+		<!-- Assume test is the database name -->
+
+		<property name="hibernate.connection.url">
+			jdbc:mysql://localhost/hihichaocau
+		</property>
+
+		<property name="hibernate.connection.username">
+			root
+		</property>
+
+		<property name="hibernate.connection.password">
+		</property>
+		
+		<!-- Echo the SQL to stdout -->
+        <property name="show_sql">true</property>
+
+		<!-- Set UTF-8 for connnection -->
+		<property name="hibernate.connection.CharSet">utf8</property>
+		<property name="hibernate.connection.characterEncoding">utf8</property>
+		<property name="hibernate.connection.useUnicode">true</property>
+
+		<!-- List of XML mapping files -->
+		<mapping resource="hbm/Song.hbm.xml" />
+
+		<!-- List of annotation mapping class -->
+		<!-- <mapping class="crawl.music.entity.Song" /> -->
+
+	</session-factory>
+</hibernate-configuration>
